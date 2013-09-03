@@ -16,6 +16,7 @@ syntax on
 set background=dark
 color vividchalk
 
+
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
@@ -256,7 +257,6 @@ if has("gui_running")
 endif
 
 "C，C++,java,python 按F9编译运行
-map <F9> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
@@ -275,5 +275,9 @@ func! CompileRunGcc()
 		exec "!python %<"
 	endif
 endfunc
+map <F9> :call CompileRunGcc()<CR>
+
 "cpp template
 autocmd BufNewFile *.cpp    0r ~/.vim/template/cppmain.cpp
+"python template
+autocmd BufNewFile *.py 0r ~/.vim/template/pytempalte.py
