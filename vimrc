@@ -225,6 +225,8 @@ cmap w!! w !sudo tee >/dev/null %
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+vmap <C-C> * "+y
+
 " eggcache vim
 nnoremap ; :
 :command W w
